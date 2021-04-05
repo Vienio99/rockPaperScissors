@@ -1,0 +1,10 @@
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.output {
+    text-align: center;
+    margin-top: 100px;
+}
