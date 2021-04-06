@@ -58,19 +58,19 @@ function game(playerChoice) {
 
     if (player === 5 | computer === 5) {
         if (player === computer) {
-            alert("It's a tie!")
+            output.innerText = "It's a tie!"
             player = 0;
             computer = 0;
             output.innerText = '';
             score.innerText = "You: " + player + " - " + "Computer: " + computer;
         } else if (player > computer) {
-            alert("You win!");
+            output.innerText = "You win!";
             player = 0;
             computer = 0;
             output.innerText = '';
             score.innerText = "You: " + player + " - " + "Computer: " + computer;
         } else if (computer > player) {
-            alert("You lose!")
+            output.innerText = "You lose!";
             player = 0;
             computer = 0;
             output.innerText = '';
