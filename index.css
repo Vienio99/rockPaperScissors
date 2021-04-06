@@ -1,10 +1,36 @@
+h1 {
+    text-align: center;
+}
+
 .buttons {
     display: flex;
     justify-content: center;
     margin-top: 200px;
 }
 
+.buttons p {
+    font-size: 18px;
+}
+
 .output {
     text-align: center;
     margin-top: 100px;
 }
+
+img {
+    width: 30%;
+}
+
+
+.water:hover {
+    box-shadow: 0 0 3pt 2pt #5a9ca4;
+}
+
+.fire:hover {
+    box-shadow: 0 0 3pt 2pt #fe9441;
+}
+
+.grass:hover {
+    box-shadow: 0 0 3pt 2pt #5b8f63;
+}
+

@@ -1,5 +1,5 @@
 function computerPlay() {
-    itemsList = ['Rock', 'Paper', 'Scissors']
+    itemsList = ['Charmander', 'Squirtle', 'Bulbasaur']
     let randomIndex = Math.floor(Math.random() * itemsList.length);
     return itemsList[randomIndex];
 }
@@ -20,31 +20,30 @@ function playRound(playerSelection, computerSelection) {
         playerScore++
         computerScore++
         return playerSelection + "-" + computerSelection + ". " + "It's a tie!";
-    } else if (playerSelection === "rock" && computerSelection === "paper") {
+    } else if (playerSelection === "charmander" && computerSelection === "squirtle") {
         computerScore++
-        return "Paper beats Rock! You lose!";
-    } else if (playerSelection === "paper" && computerSelection === "rock") {
+        return "Squirtle beats Charmander! You lose!";
+    } else if (playerSelection === "squirtle" && computerSelection === "charmander") {
         playerScore++
-        return "Paper beats Rock! You win!";
-    } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        return "Squirtle beats Charmander! You win!";
+    } else if (playerSelection === "squirtle" && computerSelection === "bulbasaur") {
         computerScore++
-        return "Scissors beats Paper! You lose!";
-    } else if (playerSelection === "scissors" && computerSelection === "paper") {
+        return "Bulbasaur beats Squirtle! You lose!";
+    } else if (playerSelection === "bulbasaur" && computerSelection === "squirtle") {
         playerScore++
-        return "Scissors beats Paper! You win!";
-    } else if (playerSelection === "rock" && computerSelection === "scissors") {
+        return "Bulbasaur beats Squirtle! You win!";
+    } else if (playerSelection === "charmander" && computerSelection === "bulbasaur") {
         playerScore++
-        return "Rock beats Scissors! You win!";
-    } else if (playerSelection === "scissors" && computerSelection === "rock") {
+        return "Charmander beats Bulbasaur! You win!";
+    } else if (playerSelection === "bulbasaur" && computerSelection === "charmander") {
         computerScore++
-        return "Rock beats Scissors! You lose!";
+        return "Charmander beats Bulbasaur! You lose!";
     }
 }
 
 
 function game(playerChoice) {
-    player = 0
-    computer = 0
+
 
     let playerSelection = playerChoice;
     let computerSelection = computerPlay()
@@ -55,22 +54,39 @@ function game(playerChoice) {
     computer += computerScore;
 
     score = document.querySelector('.score')
+    score.innerText = "You: " + player + " - " + "Computer: " + computer;
 
-    score.innerText = "You: " + player + " - " + "Computer: " + computer
-    
-    // if (player === computer) {
-    //     console.log("It's a tie!")
-    // } else if (player > computer) {
-    //     console.log("You win!")
-    // } else if (computer > player) {
-    //     console.log("You lose!")
-    // }
+    if (player === 5 | computer === 5) {
+        if (player === computer) {
+            alert("It's a tie!")
+            player = 0;
+            computer = 0;
+            output.innerText = '';
+            score.innerText = "You: " + player + " - " + "Computer: " + computer;
+        } else if (player > computer) {
+            alert("You win!");
+            player = 0;
+            computer = 0;
+            output.innerText = '';
+            score.innerText = "You: " + player + " - " + "Computer: " + computer;
+        } else if (computer > player) {
+            alert("You lose!")
+            player = 0;
+            computer = 0;
+            output.innerText = '';
+            score.innerText = "You: " + player + " - " + "Computer: " + computer;
+        }
+    }
 }
 
 buttons = document.querySelectorAll('.choice')
-
 buttons.forEach((choice) => {
     choice.addEventListener('click', () => {
         game(choice.innerText);
     })
 })
+
+
+player = 0
+computer = 0
+
