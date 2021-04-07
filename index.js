@@ -11,14 +11,11 @@ function capitalizeFirstLetter(word) {
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase()
     computerSelection = computerSelection.toLowerCase()
-    playerScore = 0
-    computerScore = 0
+
 
     if (playerSelection === computerSelection) {
         playerSelection = capitalizeFirstLetter(playerSelection)
         computerSelection = capitalizeFirstLetter(computerSelection)
-        playerScore++
-        computerScore++
         return playerSelection + "-" + computerSelection + ". " + "It's a tie!";
     } else if (playerSelection === "charmander" && computerSelection === "squirtle") {
         computerScore++
@@ -44,37 +41,38 @@ function playRound(playerSelection, computerSelection) {
 
 function game(playerChoice) {
 
-
     let playerSelection = playerChoice;
     let computerSelection = computerPlay()
+    
     output = document.querySelector('.output-text')
     text = playRound(playerSelection, computerSelection)
     output.innerText = text
-    player += playerScore;
-    computer += computerScore;
 
     score = document.querySelector('.score')
-    score.innerText = "You: " + player + " - " + "Computer: " + computer;
-
-    if (player === 5 | computer === 5) {
-        if (player === computer) {
-            output.innerText = "It's a tie!"
-            player = 0;
-            computer = 0;
-            output.innerText = '';
-            score.innerText = "You: " + player + " - " + "Computer: " + computer;
-        } else if (player > computer) {
+    score.innerText = "You: " + playerScore + " - " + "Computer: " + computerScore;
+    output.style.color = "";
+    
+    if (playerScore === 5 | computerScore === 5) {
+        if (playerScore > computerScore) {
             output.innerText = "You win!";
-            player = 0;
-            computer = 0;
-            output.innerText = '';
-            score.innerText = "You: " + player + " - " + "Computer: " + computer;
-        } else if (computer > player) {
+            output.style.color = "green";
+            score.innerText = '';
+            playerScore = 0;
+            computerScore = 0;
+            confetti({
+                particleCount: 500,
+                origin: { x: 0 }
+            });
+            confetti({
+                particleCount: 500,
+                origin: { x: 1 }
+            });
+        } else if (computerScore > playerScore) {
             output.innerText = "You lose!";
-            player = 0;
-            computer = 0;
-            output.innerText = '';
-            score.innerText = "You: " + player + " - " + "Computer: " + computer;
+            output.style.color = "red";
+            score.innerText = '';
+            playerScore = 0;
+            computerScore = 0;
         }
     }
 }
@@ -87,6 +85,6 @@ buttons.forEach((choice) => {
 })
 
 
-player = 0
-computer = 0
+playerScore = 0
+computerScore = 0
 
