@@ -2,6 +2,10 @@ html {
     font-family: 'Montserrat', sans-serif;
 }
 
+h1 {
+    text-align: center;
+    margin-top: 80px;
+}
 .main-image img {
     width: 500px;
     display: block;
@@ -12,7 +16,7 @@ html {
 .buttons {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .buttons p {
