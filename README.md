@@ -20,7 +20,7 @@
     <li><a href="https://fonts.google.com/">Google Fonts</a></li>
     <li><a href="https://www.npmjs.com/package/canvas-confetti">canvas-confetti</a></li>
   </ul> 
-<h2>Home page</h2>
-<p><a href="Project.png"></a></p>
+<h2>Home page image</h2>
+<p><a href="img/Project.png"></a></p>
 <h2>Author</h2>
 <p><a href="https://github.com/Vienio99">Vienio99</a></p>
