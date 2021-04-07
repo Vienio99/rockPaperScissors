@@ -17,6 +17,11 @@ html {
 
 .buttons p {
     font-size: 23px;
+    font-weight: bold;
+}
+
+.reset {
+    text-align: center;
 }
 
 .output {
@@ -35,13 +40,28 @@ button img {
 
 .water:hover {
     box-shadow: 0 0 3pt 2pt #5a9ca4;
+    cursor: pointer;
 }
 
 .fire:hover {
     box-shadow: 0 0 3pt 2pt #fe9441;
+    cursor: pointer;
 }
 
 .grass:hover {
     box-shadow: 0 0 3pt 2pt #5b8f63;
+    cursor: pointer;
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 99.50%;  /* Height of the footer */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    font-family : inherit;
+    font-size: 1em;
+}

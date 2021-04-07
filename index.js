@@ -43,20 +43,20 @@ function game(playerChoice) {
 
     let playerSelection = playerChoice;
     let computerSelection = computerPlay()
-    
+
     output = document.querySelector('.output-text')
     text = playRound(playerSelection, computerSelection)
-    output.innerText = text
+    output.textContent = text
 
     score = document.querySelector('.score')
-    score.innerText = "You: " + playerScore + " - " + "Computer: " + computerScore;
+    score.textContent = "You: " + playerScore + " - " + "Computer: " + computerScore;
     output.style.color = "";
     
     if (playerScore === 5 | computerScore === 5) {
         if (playerScore > computerScore) {
-            output.innerText = "You win!";
+            output.textContent = "You win!";
             output.style.color = "green";
-            score.innerText = '';
+            score.textContent = '';
             playerScore = 0;
             computerScore = 0;
             confetti({
@@ -68,9 +68,9 @@ function game(playerChoice) {
                 origin: { x: 1 }
             });
         } else if (computerScore > playerScore) {
-            output.innerText = "You lose!";
+            output.textContent = "You lose!";
             output.style.color = "red";
-            score.innerText = '';
+            score.textContent = '';
             playerScore = 0;
             computerScore = 0;
         }
@@ -87,4 +87,14 @@ buttons.forEach((choice) => {
 
 playerScore = 0
 computerScore = 0
+
+reset = document.querySelector('.reset')
+reset.addEventListener('click', () => {
+    playerScore = 0
+    computerScore = 0
+    output = document.querySelector('.output-text')
+    output.textContent = '';
+    score = document.querySelector('.score')
+    score.textContent = '';
+})
 
